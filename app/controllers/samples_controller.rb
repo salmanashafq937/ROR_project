@@ -21,7 +21,7 @@ end
 
 #show Action
 def show
-	@ins1=Sample.find(params[:id])	
+	@ins=Sample.find(params[:id])	
 end
 
 
@@ -42,6 +42,15 @@ def update
 	else
 		render 'edit'
 	end
+end
+
+
+
+#index Action
+def index
+	@samples=Sample.all
+
+	
 end
 
 

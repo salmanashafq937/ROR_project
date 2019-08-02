@@ -1,8 +1,12 @@
 <h1>The record is showed</h1>
 <p>
-	Name: <%=@ins1.name%>	
+	Name: <%=@ins.name%>	
 </p>
 <p>
-	Description: <%= @ins1.description%>
+	Description: <%= @ins.description%>
 </p>
+
+<td><%= link_to "Edit this Record", edit_sample_path(@ins)%></td><br><br>
+<td><%= link_to "Back to All Records list",samples_path%></td>
+
 

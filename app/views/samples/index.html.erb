@@ -1,0 +1,18 @@
+<h1>List of all Recored In database</h1>
+
+<%= link_to "Create a new Record" , new_sample_path%><br><br>
+<!--Table for Samples list-->
+<table border=1>
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+	</tr>
+	<% @samples.each do |obj|%>
+		<tr>
+			<td><%=obj.name%></td>
+			<td><%=obj.description%></td>
+			<td><%= link_to "Edit", edit_sample_path(obj)%></td>
+			<td><%= link_to "Show", sample_path(obj)%></td>
+		</tr>
+	<%end%>
+</table>
