@@ -1,10 +1,12 @@
 class SamplesController<ApplicationController
-
+#new
 def new
 	@ins= Sample.new
 
 end
 
+
+#create Action
 def create
 	@ins=Sample.new(sample_param)
 	if @ins.save
@@ -15,12 +17,36 @@ def create
 	end
 end
 
+
+
+#show Action
 def show
-	@ins1=Sample.find(params[:id])
-	
+	@ins1=Sample.find(params[:id])	
 end
 
 
+
+#edit Action
+def edit
+	@ins=Sample.find(params[:id])
+end
+
+
+
+#update Action
+def update
+	@ins=Sample.find(params[:id])
+	if @ins.update(sample_param)
+		flash[:notice]="Record has updated successfully"
+		redirect_to sample_path(@ins)
+	else
+		render 'edit'
+	end
+end
+
+
+
+#other private metods/actions
 private
 
 	def sample_param
