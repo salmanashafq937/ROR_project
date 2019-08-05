@@ -53,7 +53,15 @@ def index
 	
 end
 
+#delete Action
+def destroy
+	@ins=Sample.find(params[:id])
+	@ins.destroy
+	flash[:notice]="Record is deleted successfully"
+	redirect_to samples_path
 
+	
+end
 
 #other private metods/actions
 private

@@ -13,6 +13,6 @@
 			<td><%=obj.description%></td>
 			<td><%= link_to "Edit", edit_sample_path(obj)%></td>
 			<td><%= link_to "Show", sample_path(obj)%></td>
+			<td><%= link_to "Delete", sample_path(obj) , method: :delete, data: {confirm: "Are you sure?"} %></td>
 		</tr>
 	<%end%>
-</table>
